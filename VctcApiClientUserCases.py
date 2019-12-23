@@ -15,7 +15,7 @@ class VctcApiClientUserCases(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.vctcApiClient = VctcApiClient("AzE5", 'u4VcwCrZ0tDozhE')
+        self.vctcApiClient = VctcApiClient("AzE5", 'u4VcwCrZ0tD$ozhE')
 
     def test_CommonSignExplorer(self):
         pass

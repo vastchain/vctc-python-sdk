@@ -1,5 +1,5 @@
 import json
-
+from VctcExceptions import VctcException
 import requests
 import datetime
 import hmac
@@ -51,7 +51,10 @@ class VctcClient:
                 timeout=3
 
             )
-            return re.content
+            res=json.loads(re.content);
+            if res["error"]:
+                raise VctcException(res['error'] + ": " + res['msg'],res["code"])
+            return res
         except Exception as e:
             raise e
         finally:
